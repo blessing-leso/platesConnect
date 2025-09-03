@@ -123,10 +123,14 @@ const Auth = () => {
           description: "Please check your email to verify your account."
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
+      let errorMessage = "An unexpected error occurred";
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
       toast({
         title: "Error",
-        description: error.message,
+        description: errorMessage,
         variant: "destructive"
       });
     } finally {
