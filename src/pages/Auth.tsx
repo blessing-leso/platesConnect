@@ -35,7 +35,7 @@ const Auth = () => {
     fullName: '',
     phoneNumber: '',
     location: '',
-    userType: 'farmer',
+    userType: 'kitchen',
     whatsappOptIn: true,
     // Kitchen-specific fields
     kitchenName: '',
@@ -96,6 +96,8 @@ const Auth = () => {
           options: {
              data: {
             full_name: formData.fullName,
+            phone_number: formData.phoneNumber,
+            location: formData.location
           },
             emailRedirectTo: `${window.location.origin}/dashboard`
           }
