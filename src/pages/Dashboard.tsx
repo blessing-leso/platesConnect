@@ -41,7 +41,7 @@ const Dashboard = () => {
             .from('profiles')
             .select('*')
             .eq('user_id', session.user.id)
-            .single();
+           
           
           if (error) {
             console.error('Error fetching profile:', error);
