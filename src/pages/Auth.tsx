@@ -10,16 +10,32 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Wheat, ChefHat } from 'lucide-react';
 
+type UserType = 'farmer' | 'kitchen';
+
+interface FormData {
+  email: string;
+  password: string;
+  fullName: string;
+  phoneNumber: string;
+  location: string;
+  userType: UserType;
+  whatsappOptIn: boolean;
+  kitchenName: string;
+  capacityPeople: number;
+  storageCapacity: string;
+  address: string;
+}
+
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
     fullName: '',
     phoneNumber: '',
     location: '',
-    userType: 'farmer' as 'farmer' | 'kitchen',
+    userType: 'farmer',
     whatsappOptIn: true,
     // Kitchen-specific fields
     kitchenName: '',
