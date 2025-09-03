@@ -51,7 +51,7 @@ const Dashboard = () => {
               variant: "destructive"
             });
           } else {
-            setProfile(profileData);
+            setProfile(profileData && profileData.length > 0 ? profileData[0] : null);
           }
         } else {
           setProfile(null);
