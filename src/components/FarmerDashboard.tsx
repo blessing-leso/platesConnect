@@ -41,7 +41,6 @@ interface FarmerDashboardProps {
 }
 
 export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({profile}) => {
-  const [profile, setProfile] = useState<Profile | null>(null);
   const [listings, setListings] = useState<SurplusListing[]>([]);
   const [showAddForm, setShowAddForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -76,8 +75,6 @@ export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({profile}) => {
         });
         return;
       }
-
-      setProfile(profilesData);
 
       // Fetch listings
       await fetchListings(session.user.id);
