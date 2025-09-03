@@ -48,7 +48,7 @@ interface SurplusMatch {
 }
 
 interface KitchenDashboardProps {
-  profile: Profile & {user_type: 'kitchen'};
+  profile: Profile;
 }
 
 export const KitchenDashboard: React.FC<KitchenDashboardProps> = ({ profile }) => {

@@ -37,7 +37,7 @@ interface SurplusListing {
 }
 
 interface FarmerDashboardProps {
-  profile: Profile & {user_type: 'farmer'};
+  profile: Profile;
 }
 
 export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({profile}) => {
