@@ -80,8 +80,6 @@ const Auth = () => {
           options: {
              data: {
             full_name: formData.fullName,
-            phone_number: formData.phoneNumber,
-            location: formData.location
           },
             emailRedirectTo: `${window.location.origin}/dashboard`
           }
