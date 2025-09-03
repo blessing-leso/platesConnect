@@ -12,7 +12,7 @@ interface Profile {
   full_name: string;
   phone_number: string | null;
   whatsapp_opted_in: boolean;
-  user_type: 'farmer' | 'kitchen';
+  user_type: 'kitchen';
   location: string;
   created_at: string;
   updated_at: string;
