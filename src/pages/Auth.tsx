@@ -35,7 +35,7 @@ const Auth = () => {
     fullName: '',
     phoneNumber: '',
     location: '',
-    userType: 'kitchen',
+    userType: 'farmer',
     whatsappOptIn: true,
     // Kitchen-specific fields
     kitchenName: '',
