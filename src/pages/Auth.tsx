@@ -101,6 +101,10 @@ const Auth = () => {
           }
         });
 
+        if (signUpError?.status === 409) { 
+            throw new Error("This email is already registered. Try signing in instead.")}
+
+
         if (signUpError) throw signUpError;
 
         // Fetch the newly created user
