@@ -40,7 +40,7 @@ interface FarmerDashboardProps {
   profile: Profile;
 }
 
-export const FarmerDashboard: React.FC = () => {
+export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({profile}) => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [listings, setListings] = useState<SurplusListing[]>([]);
   const [showAddForm, setShowAddForm] = useState(false);
