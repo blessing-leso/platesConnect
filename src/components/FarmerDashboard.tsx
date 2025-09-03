@@ -16,7 +16,7 @@ interface Profile {
   full_name: string;
   phone_number: string | null;
   whatsapp_opted_in: boolean;
-  user_type: 'farmer';
+  user_type: 'farmer' | 'kitchen';
   location: string;
   created_at: string;
   updated_at: string;
@@ -37,7 +37,7 @@ interface SurplusListing {
 }
 
 interface FarmerDashboardProps {
-  profile: Profile;
+  profile: Profile & {user_type: 'farmer'};
 }
 
 export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({profile}) => {

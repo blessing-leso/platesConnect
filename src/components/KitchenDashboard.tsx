@@ -12,7 +12,7 @@ interface Profile {
   full_name: string;
   phone_number: string | null;
   whatsapp_opted_in: boolean;
-  user_type: 'kitchen';
+  user_type: 'farmer' | 'kitchen';
   location: string;
   created_at: string;
   updated_at: string;
@@ -48,7 +48,7 @@ interface SurplusMatch {
 }
 
 interface KitchenDashboardProps {
-  profile: Profile;
+  profile: Profile & {user_type: 'kitchen'};
 }
 
 export const KitchenDashboard: React.FC<KitchenDashboardProps> = ({ profile }) => {
