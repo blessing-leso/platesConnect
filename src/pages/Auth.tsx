@@ -49,8 +49,8 @@ const Auth = () => {
     }));
   };
 
-  const handleUserTypeChange = (value: string) => {
-    setFormData(prev => ({ ...prev, userType: value as 'farmer' | 'kitchen' }));
+  const handleUserTypeChange = (value: 'farmer' | 'kitchen') => {
+    setFormData(prev => ({ ...prev, userType: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
