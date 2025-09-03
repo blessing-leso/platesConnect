@@ -36,6 +36,10 @@ interface SurplusListing {
   created_at: string;
 }
 
+interface FarmerDashboardProps {
+  profile: Profile;
+}
+
 export const FarmerDashboard: React.FC = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [listings, setListings] = useState<SurplusListing[]>([]);
