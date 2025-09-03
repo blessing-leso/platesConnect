@@ -90,9 +90,8 @@ const Auth = () => {
         if (signUpError) throw signUpError;
 
         // Fetch the newly created user
-        const { data: { user }, error: getUserError } = await supabase.auth.getUser();
-        if (getUserError) throw getUserError;
-        if (!user) throw new Error("User not found after signup");
+        const user = signUpData?.user;
+        if (!user) throw new Error("User not returned from signUp")
 
         // Insert profile row
         const { error: profileError } = await supabase
