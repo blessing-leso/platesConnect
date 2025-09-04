@@ -32,7 +32,7 @@ export const Hero = () => {
               size="lg" 
               variant="orange" 
               className="text-lg px-8 py-4"
-              onClick={() => window.location.href = '/auth'}
+              onClick={() => window.location.href = '/login'}
             >
               Start Connecting Food
               <ArrowRight className="ml-2 h-5 w-5" />
