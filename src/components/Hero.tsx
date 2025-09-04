@@ -52,14 +52,14 @@ export const Hero = () => {
             <div className="text-center animate-slide-up">
               <div className="flex items-center justify-center mb-3">
                 <Users className="h-8 w-8 text-primary-glow mr-2" />
-                <span className="text-3xl font-bold">50K+</span>
+                <span className="text-3xl font-bold">3+</span>
               </div>
               <p className="text-white/80">Communities Connected</p>
             </div>
             <div className="text-center animate-slide-up" style={{ animationDelay: "0.1s" }}>
               <div className="flex items-center justify-center mb-3">
                 <Leaf className="h-8 w-8 text-primary-glow mr-2" />
-                <span className="text-3xl font-bold">2M+</span>
+                <span className="text-3xl font-bold">50+</span>
               </div>
               <p className="text-white/80">Meals Generated</p>
             </div>

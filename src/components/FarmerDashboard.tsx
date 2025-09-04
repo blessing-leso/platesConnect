@@ -36,8 +36,13 @@ interface SurplusListing {
   created_at: string;
 }
 
-export const FarmerDashboard: React.FC = () => {
-  const [profile, setProfile] = useState<Profile | null>(null);
+interface FarmerDashboardProps {
+  profile: Profile;
+}
+
+
+export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({ profile }) => {
+  
   const [listings, setListings] = useState<SurplusListing[]>([]);
   const [showAddForm, setShowAddForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -73,7 +78,7 @@ export const FarmerDashboard: React.FC = () => {
         return;
       }
 
-      setProfile(profilesData);
+
 
       // Fetch listings
       await fetchListings(session.user.id);
