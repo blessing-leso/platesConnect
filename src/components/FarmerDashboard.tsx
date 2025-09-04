@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Plus, Package, TrendingUp, Users } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import {Header} from "@/components/Header";
 
 interface Profile {
   id: string;
@@ -193,6 +194,9 @@ export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({profile}) => {
 
   return (
     <div className="space-y-6">
+      <Header />
+      <h1 className="text-3xl font-bold">Welcome, {profile.full_name}</h1>
+      <p className="text-muted-foreground">Manage your surplus listings and connect with community kitchens</p>
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
