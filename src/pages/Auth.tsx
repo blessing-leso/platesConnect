@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Wheat, ChefHat } from 'lucide-react';
+import {Header} from "@/components/Header";
 
 type UserType = 'farmer' | 'kitchen';
 
@@ -163,6 +164,8 @@ const Auth = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className="min-h-screen bg-gradient-primary flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
@@ -348,6 +351,7 @@ const Auth = () => {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 };
 
