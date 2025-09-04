@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
+  Leaf,
   Smartphone, 
   Zap, 
   Users, 
@@ -63,6 +64,7 @@ export const HowItWorks = () => {
 
   return (
     <section id="how-it-works" className="py-20 bg-muted/30">
+      
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
