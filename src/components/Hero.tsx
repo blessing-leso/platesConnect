@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Leaf, Zap } from "lucide-react";
 import heroCommunity from "@/assets/hero-community.jpg";
 
-export const Home = () => {
+export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -32,13 +32,14 @@ export const Home = () => {
               size="lg" 
               variant="orange" 
               className="text-lg px-8 py-4"
-              onClick={() => window.location.href = '/login'}
+              onClick={() => window.location.href = '/auth'}
             >
               Start Connecting Food
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
-              size="lg"  
+              size="lg" 
+              variant="outline" 
               className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10"
               onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
             >

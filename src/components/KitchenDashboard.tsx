@@ -126,14 +126,10 @@ export const KitchenDashboard: React.FC<KitchenDashboardProps> = ({ profile }) =
 
       // Trigger WhatsApp notification (we'll create this function later)
       await sendWhatsAppNotification(surplusId);
-    } catch (error: unknown) {
-      let errorMessage = "An unexpected error occurred";
-      if (error instanceof Error) {
-        errorMessage = error.message;
-      }
+    } catch (error: any) {
       toast({
         title: "Error",
-        description: errorMessage,
+        description: error.message,
         variant: "destructive"
       });
     } finally {
