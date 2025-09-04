@@ -38,8 +38,7 @@ export const Hero = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
-              size="lg" 
-              variant="outline" 
+              size="lg"  
               className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10"
               onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
             >
