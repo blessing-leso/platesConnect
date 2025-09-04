@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Plus, Package, TrendingUp, Users } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import {Header} from "@/components/Header";
 
 interface Profile {
   id: string;
@@ -36,8 +37,11 @@ interface SurplusListing {
   created_at: string;
 }
 
-export const FarmerDashboard: React.FC = () => {
-  const [profile, setProfile] = useState<Profile | null>(null);
+interface FarmerDashboardProps {
+  profile: Profile;
+}
+
+export const FarmerDashboard: React.FC<FarmerDashboardProps> = ({profile}) => {
   const [listings, setListings] = useState<SurplusListing[]>([]);
   const [showAddForm, setShowAddForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -72,8 +76,6 @@ export const FarmerDashboard: React.FC = () => {
         });
         return;
       }
-
-      setProfile(profilesData);
 
       // Fetch listings
       await fetchListings(session.user.id);
@@ -147,10 +149,14 @@ export const FarmerDashboard: React.FC = () => {
 
       // Trigger AI matching
       await triggerAIMatching(profile.user_id);
-    } catch (error: any) {
+    } catch (error: unknown) {
+      let errorMessage = "An unexpected error occurred";
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
       toast({
         title: "Error",
-        description: error.message,
+        description: errorMessage,
         variant: "destructive"
       });
     } finally {
@@ -188,6 +194,9 @@ export const FarmerDashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
+      <Header />
+      <h1 className="text-3xl font-bold">Welcome, {profile.full_name}</h1>
+      <p className="text-muted-foreground">Manage your surplus listings and connect with community kitchens</p>
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
