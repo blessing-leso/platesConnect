@@ -14,7 +14,7 @@ export const Header = () => {
           <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
             Features
           </a>
-          <a href="/how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
             How It Works
           </a>
           <a href="#impact" className="text-sm font-medium hover:text-primary transition-colors">
