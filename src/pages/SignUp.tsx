@@ -129,8 +129,6 @@ const SignUp = () => {
   };
 
   return (
-    <>
-      <Header />
       <div className="min-h-screen bg-gradient-primary flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
@@ -305,7 +303,6 @@ const SignUp = () => {
           </CardContent>
         </Card>
       </div>
-    </>
   );
 };
 
