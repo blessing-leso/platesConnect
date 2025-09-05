@@ -7,7 +7,6 @@ import { User, Session } from '@supabase/supabase-js';
 import { FarmerDashboard } from '@/components/FarmerDashboard';
 import { KitchenDashboard } from '@/components/KitchenDashboard';
 import { Loader2 } from 'lucide-react';
-import { Header } from "@/components/Header";
 
 interface Profile {
   id: string;
@@ -26,7 +25,6 @@ const Dashboard = () => {
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
-  const [loadingLogout, setLoadingLogout] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -43,7 +41,7 @@ const Dashboard = () => {
             .from('profiles')
             .select('*')
             .eq('user_id', session.user.id)
-           
+            .single();
           
           if (error) {
             console.error('Error fetching profile:', error);
@@ -53,7 +51,7 @@ const Dashboard = () => {
               variant: "destructive"
             });
           } else {
-            setProfile(profileData && profileData.length > 0 ? profileData[0] : null);
+            setProfile(profileData);
           }
         } else {
           setProfile(null);
@@ -77,13 +75,11 @@ const Dashboard = () => {
   }, [navigate, toast]);
 
   const handleSignOut = async () => {
-      try {
-          setLoadingLogout(true);
-           const { error } = await supabase.auth.signOut();
-          if (error) {
-          toast({
-            title: "Error",
-                description: error.message,
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast({
+        title: "Error",
+        description: error.message,
         variant: "destructive"
       });
     } else {
@@ -93,15 +89,6 @@ const Dashboard = () => {
       });
       navigate('/');
     }
-      } catch (error) {
-        toast({
-          title: "Error",
-          description: "An unexpected error occurred during sign out.",
-          variant: "destructive"
-        });
-      } finally {
-        setLoadingLogout(false);
-      }
   };
 
   if (loading) {
@@ -110,17 +97,6 @@ const Dashboard = () => {
         <div className="text-center">
           <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
           <p className="text-primary">Loading your dashboard...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (loadingLogout) {
-    return (
-      <div className="min-h-screen bg-gradient-primary flex items-center justify-center">
-        <div className="text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
-          <p className="text-primary">Signing you out...</p>
         </div>
       </div>
     );
