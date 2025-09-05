@@ -19,5 +19,4 @@ const Auth = () => {
 
   return null; // This component just handles redirection
 };
-
 export default Auth;
