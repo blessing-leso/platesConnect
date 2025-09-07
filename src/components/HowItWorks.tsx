@@ -16,15 +16,15 @@ export const HowItWorks = () => {
     {
       step: "01",
       icon: <Smartphone className="h-12 w-12 text-primary" />,
-      title: "Log Surplus via WhatsApp",
-      description: "Farmers send a simple message to Kaiǀūb's WhatsApp bot with photos and details. Our AI processes the images and GPS location automatically.",
-      details: ["WhatsApp bot integration", "AI image recognition", "GPS location capture", "Automatic quantity estimation"]
+      title: "Log Surplus via Google Forms or by Signing Up",
+      description: "Food Donors submit surplus details through Google Forms or by signing up on our platform.",
+      details: ["Google Forms integration", , "GPS location operates", "Automatic quantity estimation"]
     },
     {
       step: "02", 
       icon: <Zap className="h-12 w-12 text-primary" />,
       title: "AI Matches & Generates Meals",
-      description: "Our AI instantly matches surplus with nearby kitchens and generates nutritious meal plans based on available ingredients and dietary needs.",
+      description: "Our AI matches surplus with nearby kitchens and generates nutritious meal plans based on available ingredients and dietary needs.",
       details: ["Proximity-based matching", "Nutrition optimization", "Age-group customization", "Resource consideration"]
     },
     {
@@ -108,9 +108,9 @@ export const HowItWorks = () => {
         {/* Technology Stack */}
         <div className="bg-card rounded-lg p-8 shadow-soft animate-fade-in">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Built for Rural Accessibility</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-4">Want To Donate?</h3>
             <p className="text-muted-foreground">
-              Low-data design with robust offline capabilities and multi-language support
+              Low-data design Google Form for You to Sign up! 
             </p>
           </div>
           
@@ -130,9 +130,9 @@ export const HowItWorks = () => {
             <Button 
               variant="orange" 
               size="lg"
-              onClick={() => window.open('https://chat.whatsapp.com/join-kailub-community', '_blank')}
+              onClick={() => window.open('https://forms.gle/dE644zMivpZkc8U77', '_blank')}
             >
-              Join Movement
+              Donate
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

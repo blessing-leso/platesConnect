@@ -222,7 +222,7 @@ const Auth = () => {
                       <RadioGroupItem value="farmer" id="farmer" />
                       <Label htmlFor="farmer" className="flex items-center gap-2">
                         <Wheat className="h-4 w-4" />
-                        Farmer/Producer
+                        Food Donor
                       </Label>
                     </div>
                     <div className="flex items-center space-x-2">

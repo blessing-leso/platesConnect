@@ -17,11 +17,11 @@ export const Features = () => {
   const features = [
     {
       icon: <Zap className="h-8 w-8 text-primary" />,
-      title: "AI Surplus-to-Plate Connector",
-      description: "Smart matching system connects farmers' surplus with nearby kitchens based on proximity, meal schedules, and specific nutrition needs.",
+      title: "Surplus-to-Plate Connector",
+      description: "Smart automation matching system connects farmers' surplus with nearby kitchens based on proximity, meal schedules, and specific nutrition needs.",
       details: [
         "GPS-based food matching",
-        "Real-time surplus logging",
+        "Surplus logging",
         "Automated kitchen notifications",
         "Nutrition-priority matching"
       ]
@@ -32,7 +32,6 @@ export const Features = () => {
       description: "Builds nutrient-rich, low-cost menus using available surplus ingredients, optimized for different age groups and cooking resources.",
       details: [
         "Local produce optimization",
-        "Age-group meal planning",
         "Resource-aware recipes",
         "Nutritional density focus"
       ]
@@ -166,7 +165,7 @@ export const Features = () => {
             <Button 
               variant="orange" 
               size="lg"
-              onClick={() => window.open('https://chat.whatsapp.com/join-kailub-community', '_blank')}
+              onClick={() => window.open('https://whatsapp.com/channel/0029VbBH65DFXUuUXyoM0J3U', '_blank')}
             >
               Join the Movement
             </Button>
